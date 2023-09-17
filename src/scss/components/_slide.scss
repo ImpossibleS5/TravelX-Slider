@@ -1,0 +1,191 @@
+@use "./../variables" as *;
+@use "./../mixins" as *;
+
+.slide {
+  height: 100vh !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 80px;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  /*Создаем этот псевдоэлемент для того, чтобы сделать заголовок по центру, тк. у нас есть display: flex */
+  &::before {
+    content: "";
+  }
+
+  &--Norway {
+    @include slide-background("./../img/slider-bg/01.jpg");
+  }
+
+  &--Austria {
+    @include slide-background("./../img/slider-bg/02.jpg");
+  }
+
+  &--UAE {
+    @include slide-background("./../img/slider-bg/03.jpg");
+  }
+
+  &--Thailand {
+    @include slide-background("./../img/slider-bg/04.jpg");
+  }
+
+  &--Morocco {
+    @include slide-background("./../img/slider-bg/05.jpg");
+  }
+
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  @media (max-width: $screen-xxl) {
+    &::before {
+      padding-top: 30px;
+    }
+  }
+
+  @media (max-width: $screen-xl) {
+    padding-bottom: 60px;
+  }
+
+  @media (max-width: $screen-md) {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+}
+
+.slide__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 8px;
+}
+
+.slide__tagline {
+  color: $text-primary;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 16.5px;
+  opacity: $main-opacity;
+  padding-left: 16.5px;
+
+  @media (max-width: $screen-xxl) {
+    font-size: 25px;
+  }
+
+  @media (max-width: $screen-xl) {
+    font-size: 5vw;
+  }
+
+  @media (max-width: $screen-sm) {
+    font-size: 4vw;
+  }
+}
+
+.slide__title {
+  font-size: 250px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  @media (max-width: $screen-xxl) {
+    font-size: 200px;
+  }
+
+  @media (max-width: $screen-xl) {
+    font-size: 19vw;
+  }
+
+  &--Norway {
+    @include title-background(#051d27);
+  }
+
+  &--Austria {
+    @include title-background(#122127);
+  }
+
+  &--UAE {
+    @include title-background(#aa6621);
+  }
+
+  &--Thailand {
+    @include title-background(#2e7c88);
+  }
+
+  &--Morocco {
+    @include title-background(#757575);
+  }
+}
+
+.location-list {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  column-gap: 30px;
+
+  @media (max-width: $screen-xl) {
+    width: 90%;
+    row-gap: 20px;
+    flex-direction: column;
+  }
+}
+
+.location-list__elem {
+  display: block;
+  position: relative;
+  background-image: url("./../img/icons/map-marker-line.svg");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 40px 40px; /* x y */
+  padding: 35px 25px 35px 95px;
+  flex-grow: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    opacity: 0.1;
+    background: #fff;
+    filter: blur(3px);
+  }
+
+  @media (max-width: $screen-xl) {
+    padding: 20px 20px 18px 55px;
+    background-position: 18px 25px;
+  }
+}
+
+.location-list__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 4px;
+
+  @media (max-width: $screen-md) {
+    font-size: 15px;
+  }
+}
+
+.location-list__subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  opacity: $main-opacity;
+
+  @media (max-width: $screen-md) {
+    font-size: 12px;
+  }
+}

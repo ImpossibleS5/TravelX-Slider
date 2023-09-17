@@ -1,0 +1,23 @@
+@use "./../variables" as *;
+
+.scrollbar {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 326px;
+  height: 10px;
+  transform: rotate(90deg) translate(50%, 0);
+  transform-origin: right top;
+  z-index: 1;
+
+  @media (max-width: $screen-xl) {
+    transform: none;
+    width: 100%;
+    top: unset;
+    bottom: -30px;
+  }
+
+  @media (max-width: $screen-md) {
+    bottom: -15px;
+  }
+}

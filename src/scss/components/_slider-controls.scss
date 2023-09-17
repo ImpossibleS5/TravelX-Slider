@@ -1,0 +1,31 @@
+@use "./../variables" as *;
+
+.slider-controls {
+  display: flex;
+  flex-direction: column;
+  column-gap: 15px;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  pointer-events: all;
+  z-index: 1;
+
+  @media (max-width: $screen-xl) {
+    display: none;
+  }
+}
+
+.slider-controls__arrows {
+  display: flex;
+  column-gap: 6px;
+  opacity: $main-opacity;
+}
+
+.slider-controls__count {
+  display: flex;
+  column-gap: 6px;
+  align-items: baseline;
+  justify-content: center;
+}

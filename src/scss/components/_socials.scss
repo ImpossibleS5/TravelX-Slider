@@ -1,0 +1,20 @@
+@use "./../variables" as *;
+
+.socials {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  pointer-events: all;
+
+  @media (max-width: $screen-xl) {
+    display: none;
+  }
+}
+
+.socials__list {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 28px;
+}

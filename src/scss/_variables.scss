@@ -1,0 +1,31 @@
+@use "./fonts.scss";
+
+/* Typography */
+$font-fallback: BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+  "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$font-body: "Montserrat", $font-fallback;
+$base-font-size: 16px;
+
+/* Text */
+$text-primary: #fff;
+
+/* Screen size*/
+$screen-sm: 426px;
+$screen-md: 769px;
+$screen-lg: 992px;
+$screen-xl: 1024px;
+$screen-xxl: 1600px;
+
+/* Other */
+$main-opacity: 0.4;
+$slide-radial-gradient: radial-gradient(
+  50% 50% at 50% 50%,
+  rgba(0, 0, 0, 0) 0%,
+  rgba(0, 0, 0, 0.2) 100%
+);
+$slide-linear-gradient: linear-gradient(
+  181deg,
+  rgba(0, 0, 0, 0.2) 0.91%,
+  rgba(255, 255, 255, 0) 116.71%,
+  rgba(255, 255, 255, 0) 116.72%
+);

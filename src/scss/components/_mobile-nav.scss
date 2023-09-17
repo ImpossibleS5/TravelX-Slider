@@ -1,0 +1,80 @@
+@use "./../variables" as *;
+
+.mobile-nav__overlay {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  transition: all 0.4s ease-in-out;
+
+  &.close {
+    opacity: 0;
+  }
+
+  &.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  @media (max-width: $screen-sm) {
+    display: none;
+  }
+}
+
+.mobile-nav {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  background-color: #000;
+  height: 100vh;
+  width: 440px;
+  padding: 110px 60px 0;
+  transition: all 0.4s ease-in-out;
+
+  &.close {
+    transform: translate(100%, 0);
+  }
+
+  &.open {
+    transform: translate(0, 0);
+  }
+
+  @media (max-width: $screen-sm) {
+    width: 100%;
+  }
+}
+
+#closeMobileNavigation {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.mobile-nav__elem {
+  color: $text-primary;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: normal;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-nav__link {
+  display: block;
+  padding-bottom: 25px;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    padding-left: 20px;
+  }
+}
